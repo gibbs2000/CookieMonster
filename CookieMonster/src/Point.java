@@ -1,4 +1,8 @@
-
+/**
+ * 
+ * @author Sean Gibbons
+ *
+ */
 public class Point {
 	int row, column, value;
 
@@ -19,6 +23,10 @@ public class Point {
 
 	public int getValue() {
 		return value;
+	}
+
+	public void setValue(int v) {
+		value = v;
 	}
 
 	@Override

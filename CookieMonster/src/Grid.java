@@ -3,6 +3,11 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Sean Gibbons
+ *
+ */
 public class Grid {
 	public ArrayList<ArrayList<Point>> grid;
 
@@ -43,6 +48,30 @@ public class Grid {
 
 	public Point getPoint(int row, int col) {
 		return grid.get(row).get(col);
+	}
+
+	public Point getRight(Point cur) {
+		try {
+			return grid.get(cur.getRow()).get(cur.getColumn() + 1);
+		} catch (IndexOutOfBoundsException ex) {
+			return null;
+		}
+	}
+
+	public Point getBelow(Point cur) {
+		try {
+			return grid.get(cur.getRow() + 1).get(cur.getColumn());
+		} catch (IndexOutOfBoundsException ex) {
+			return null;
+		}
+	}
+
+	public int getRows() {
+		return grid.size();
+	}
+
+	public int getColumns() {
+		return grid.get(0).size();
 	}
 
 	@Override
